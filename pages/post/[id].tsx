@@ -22,7 +22,7 @@ const PostItem: NextPage<IProp> = ({ post }) => {
             </Main>
 
             <Footer>
-                Footer Post {router.query.id}
+                Footer
             </Footer>
         </Wrapper>
     )
