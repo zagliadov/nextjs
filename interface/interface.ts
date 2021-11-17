@@ -3,6 +3,8 @@ export interface IPosts {
     id: number;
     title?: string | undefined;
     body?: string;
+    url?: string;
+    thumbnailUrl?: string;
 }
 
 export interface IProps {

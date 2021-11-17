@@ -6,7 +6,7 @@ import React from 'react';
 import Header from '../../components/Header/Header';
 import Main from '../../components/Main/Main';
 import Footer from '../../components/Footer/Footer';
-
+import Image from 'next/image';
 
 const PostItem: NextPage<IProp> = ({ post }) => {
 
@@ -19,6 +19,9 @@ const PostItem: NextPage<IProp> = ({ post }) => {
                 <h2>Posts {router.query.id}</h2>
                 <p>{post.title}</p>
                 <p>{post.body}</p>
+                <img
+                    src={`${post.thumbnailUrl}`}
+                    alt={`${post.title}`} />
             </Main>
 
             <Footer>
@@ -28,13 +31,13 @@ const PostItem: NextPage<IProp> = ({ post }) => {
     )
 }
 
+
+
 PostItem.getInitialProps = async (ctx) => {
     const response = await fetch(`http://localhost:4200/posts/${ctx.query.id}`);
     const post = await response.json();
 
-    return {
-        post
-    }
+    return { post }
 }
 
 export default PostItem;
