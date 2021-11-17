@@ -1,9 +1,12 @@
 import React from 'react'
 import Link from 'next/link';
-import styled from 'styled-components';
-
-
-
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
 
 
 
@@ -11,34 +14,27 @@ import styled from 'styled-components';
 export default function Navigation() {
 
     return (
-        <nav>
-            <Link href={'/'}><a>Home</a></Link>
-            <Link href={'/about'}><a>About</a></Link>
-            <Link href={'/posts'}><a>Posts</a></Link>
+        <Box sx={{ flexGrow: 1 }}>
+            <AppBar position="static">
+                <Toolbar>
+                    <IconButton
+                        size="large"
+                        edge="start"
+                        color="inherit"
+                        aria-label="menu"
+                        sx={{ mr: 2 }}
+                    >
+                        <MenuIcon />
+                    </IconButton>
+                    <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                        News
+                    </Typography>
+                    <Button color="inherit">Login</Button>
+                </Toolbar>
+            </AppBar>
+        </Box>
 
 
-        <style jsx>{`
-            nav {
-                display: flex;
-                align-items: center;
-                justify-content: space-around;
-                position: fixed;
-                height: 60px;
-                left: 0;
-                top: 0;
-                right: 0;
-                background-color: silver;
-            }
-            nav a {
-                color: #fff;
-                font-weight: bold;
-                font-size: 24px;
-                text-decoration: none;
-            }
 
-        
-        `}</style>
-
-        </nav>
     )
 }
