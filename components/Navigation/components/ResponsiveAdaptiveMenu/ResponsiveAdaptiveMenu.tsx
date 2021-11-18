@@ -43,6 +43,7 @@ const ResponsiveAdaptiveMenu: FC = () => {
                     '& .MuiPaper-root': {
                         display: 'flex',
                         width: '200px',
+                        fontFamily: 'Roboto sans-serif',
                         marginTop: '9px',
                         marginLeft: '-39px',
                     }

@@ -15,20 +15,21 @@ const ProductsListDetails: FC<IProductsProps> = ({ type, title, alt }) => {
         <Box sx={{
             position: 'absolute',
             flexDirection: 'column',
-            justifyContent: 'center',
+            justifyContent: 'space-around',
             alignItems: 'center',
             width: '100%',
             height: '100%',
-            backgroundColor: 'rgba(117, 190, 218, 0.2)',
+            backgroundColor: 'rgba(66, 165, 245, 0.2)',
             boxSizing: 'border-box',
             display: ((type === alt) ? 'flex' : 'none'),
             transition: 'background-color 1s',
             '&: hover': {
-                backgroundColor: 'rgba(117, 190, 218, 0.7)',
+                backgroundColor: 'rgba(66, 165, 245, 0.7)',
             }
         }}>
-            <Typography variant="h5" sx={{
+            <Typography variant="h4" sx={{
                 textAlign: 'center',
+                fontFamily: 'Roboto sans-serif',
                 paddingBottom: '20px',
                 color: '#ffffff',
             }}>
@@ -36,12 +37,14 @@ const ProductsListDetails: FC<IProductsProps> = ({ type, title, alt }) => {
             </Typography>
             <Link href={`/${alt}`} passHref>
                 <Button sx={{
-                    width: '30%',
+                    minWidth: '30%',
                     color: '#ffffff',
-                    backgroundColor: 'silver',
-                    marginTop: '20px',
+                    fontSize: '23px',
+                    fontFamily: 'Roboto sans-serif',
+                    backgroundColor: '#1976d2',
+                    marginTop: '100px',
                     '&: hover': {
-                        backgroundColor: '#51aa97'
+                        backgroundColor: '#1565c0'
                     }
                 }}> Покажите все </Button>
             </Link>
