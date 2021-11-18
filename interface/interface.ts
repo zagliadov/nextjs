@@ -1,19 +1,18 @@
 
-export interface IPosts {
+export interface IProduct {
     id: number;
-    title?: string | undefined;
-    body?: string;
+    type?: string | undefined;
+    title?: string;
     url?: string;
-    thumbnailUrl?: string;
 }
 
 export interface IProps {
-    posts?: IPosts[];
+    products?: IProduct[];
 
 }
 
 export interface IProp {
-    post?: IPosts;
+    product?: IProduct;
 }
 
 export interface ITitle {

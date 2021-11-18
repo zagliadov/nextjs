@@ -8,7 +8,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import LogoutIcon from '@mui/icons-material/Logout';
-import NavMenuList from '../AdaptiveMenu/AdaptiveMenu';
+
 
 
 
