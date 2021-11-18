@@ -1,9 +1,5 @@
 import React from 'react'
 import Link from 'next/link';
-import styled from 'styled-components';
-
-
-
 
 
 
@@ -17,7 +13,7 @@ export default function Navigation() {
             <Link href={'/posts'}><a>Posts</a></Link>
 
 
-        <style jsx>{`
+        {/* <style jsx>{`
             nav {
                 display: flex;
                 align-items: center;
@@ -37,7 +33,7 @@ export default function Navigation() {
             }
 
         
-        `}</style>
+        `}</style> */}
 
         </nav>
     )
