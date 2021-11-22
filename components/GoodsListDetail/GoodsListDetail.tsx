@@ -10,7 +10,7 @@ const GoodsListDetail: FC<IGoods> = ({ url, title, body, id, price }) => {
     const handleOpen = () => {
         setOpen(true);
     };
-    const handleClose = () => {
+    const handleClose = (): void => {
         setOpen(false);
     };
 
