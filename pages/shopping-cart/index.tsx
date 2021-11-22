@@ -10,15 +10,10 @@ const ShoppingCart: NextPage = () => {
 
     return (
         <Wrapper title={'Shopping cart'}>
-            <Header />
             <Main>
                 <h2>ShoppingCart page</h2>
 
             </Main>
-
-            <Footer>
-                Footer
-            </Footer>
         </Wrapper>
     )
 }

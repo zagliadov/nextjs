@@ -4,51 +4,31 @@
             "id": 1,
             "type": "t-shirt",
             "title": "Футболки",
-<<<<<<< HEAD
-            "url": "https://via.placeholder.com/600/51aa97"
-=======
             "url": "https://via.placeholder.com/600/2196f3"
->>>>>>> 9177e73f64ae1a7b4ed98683c46ef6ccb3b4ca45
         },
         {
             "id": 2,
             "type": "hoodies",
             "title": "Худи",
-<<<<<<< HEAD
-            "url": "https://via.placeholder.com/600/51aa97"
-=======
             "url": "https://via.placeholder.com/600/2196f3"
->>>>>>> 9177e73f64ae1a7b4ed98683c46ef6ccb3b4ca45
         },
         {
             "id": 3,
             "type": "masks",
             "title": "Маски",
-<<<<<<< HEAD
-            "url": "https://via.placeholder.com/600/51aa97"
-=======
             "url": "https://via.placeholder.com/600/2196f3"
->>>>>>> 9177e73f64ae1a7b4ed98683c46ef6ccb3b4ca45
         },
         {
             "id": 4,
             "type": "socks",
             "title": "Носки",
-<<<<<<< HEAD
-            "url": "https://via.placeholder.com/600/51aa97"
-=======
             "url": "https://via.placeholder.com/600/2196f3"
->>>>>>> 9177e73f64ae1a7b4ed98683c46ef6ccb3b4ca45
         },
         {
             "id": 5,
             "type": "accessories",
             "title": "Аксессуары",
-<<<<<<< HEAD
-            "url": "https://via.placeholder.com/600/51aa97"
-=======
             "url": "https://via.placeholder.com/600/2196f3"
->>>>>>> 9177e73f64ae1a7b4ed98683c46ef6ccb3b4ca45
         }
     ],
     "t-shirt": [

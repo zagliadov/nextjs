@@ -2,6 +2,8 @@ import Head from 'next/head';
 import React, { FC } from 'react';
 import { ITitle } from '../../interface/interface';
 import styles from '../../styles/Home.module.css'
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
 const Wrapper: FC<ITitle> = ({ children, title = 'Next App' }) => {
     return (
@@ -12,7 +14,11 @@ const Wrapper: FC<ITitle> = ({ children, title = 'Next App' }) => {
                 <meta name="description" content="this is apllooooo!!" />
                 <meta charSet="utf-8" />
             </Head>
+            <Header />
             {children}
+            <Footer>
+                Footer
+            </Footer>
         </div>
     )
 }

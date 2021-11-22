@@ -8,14 +8,10 @@ const Profile: NextPage = () => {
 
     return (
         <Wrapper title={'Profile page'}>
-            <Header />
             <Main>
                 <h2>Profile page</h2>
             </Main>
 
-            <Footer>
-                Footer
-            </Footer>
         </Wrapper>
     )
 }

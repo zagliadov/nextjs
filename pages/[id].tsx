@@ -19,8 +19,6 @@ const Auto: NextPage<any> = ({ data }) => {
 
     return (
         <Wrapper title='t-shirt'>
-            <Header />
-
             <Main>
                 {data && data.map((item) => {
                     return (
@@ -28,10 +26,6 @@ const Auto: NextPage<any> = ({ data }) => {
                     )
                 })}
             </Main>
-
-            <Footer>
-                Footer
-            </Footer>
         </Wrapper>
     );
 };
