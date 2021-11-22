@@ -1,124 +1,19 @@
 {
-    "products": [
-        {
-            "id": 1,
-            "type": "t-shirt",
-            "title": "Футболки",
-            "url": "https://via.placeholder.com/600/2196f3"
-        },
-        {
-            "id": 2,
-            "type": "hoodies",
-            "title": "Худи",
-            "url": "https://via.placeholder.com/600/2196f3"
-        },
-        {
-            "id": 3,
-            "type": "masks",
-            "title": "Маски",
-            "url": "https://via.placeholder.com/600/2196f3"
-        },
-        {
-            "id": 4,
-            "type": "socks",
-            "title": "Носки",
-            "url": "https://via.placeholder.com/600/2196f3"
-        },
-        {
-            "id": 5,
-            "type": "accessories",
-            "title": "Аксессуары",
-            "url": "https://via.placeholder.com/600/2196f3"
-        }
-    ],
-    "t-shirt": [
-        {
-            "id": 1,
-            "title": "t-shirt 1"
-        },
-        {
-            "id": 2,
-            "title": "t-shirt 2"
-        },
-        {
-            "id": 3,
-            "title": "t-shirt 3"
-        },
-        {
-            "id": 4,
-            "title": "t-shirt 4"
-        }
-    ],
-    "hoodies": [
-        {
-            "id": 1,
-            "title": "hoodies 1"
-        },
-        {
-            "id": 2,
-            "title": "hoodies 2"
-        },
-        {
-            "id": 3,
-            "title": "hoodies 3"
-        },
-        {
-            "id": 4,
-            "title": "hoodies 4"
-        }
-    ],
-    "masks": [
-        {
-            "id": 1,
-            "title": "masks 1"
-        },
-        {
-            "id": 2,
-            "title": "masks 2"
-        },
-        {
-            "id": 3,
-            "title": "masks 3"
-        },
-        {
-            "id": 4,
-            "title": "masks 4"
-        }
-    ],
-    "socks": [
-        {
-            "id": 1,
-            "title": "socks 1"
-        },
-        {
-            "id": 2,
-            "title": "socks 2"
-        },
-        {
-            "id": 3,
-            "title": "socks 3"
-        },
-        {
-            "id": 4,
-            "title": "socks 4"
-        }
-    ],
-    "accessories": [
-        {
-            "id": 1,
-            "title": "accessories 1"
-        },
-        {
-            "id": 2,
-            "title": "accessories 2"
-        },
-        {
-            "id": 3,
-            "title": "accessories 3"
-        },
-        {
-            "id": 4,
-            "title": "accessories 4"
-        }
-    ]
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
 }

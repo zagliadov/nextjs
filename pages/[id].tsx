@@ -1,30 +1,43 @@
+import dotenv from 'dotenv';
 import { NextPage } from "next";
+import { GetServerSideProps } from 'next';
 import Wrapper from '../components/Wrapper/Wrapper';
-import Header from '../components/Header/Header';
 import Main from '../components/Main/Main';
-import Footer from "../components/Footer/Footer";
+import GoodsList from '../components/GoodsList/GoodsList';
+import ProductsWrapper from '../components/ProductsWrapper/ProductsWrapper';
 
-export const getServerSideProps = async (ctx) => {
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+    try {
+        dotenv.config();
+        const response = await fetch(`${process.env.API_HOST}/${ctx.params.id}`);
+        const products = await response.json();
 
-    const response = await fetch(`http://localhost:4200/${ctx.params.id}`);
-    const data = await response.json();
-    return {
-        props: { data },
+        if (!products) {
+            return {
+                notFound: true,
+            }
+        }
+
+        return {
+            props: { products },
+        }
+    } catch (error) {
+        console.log(error)
     }
+
 }
 
 
-const Auto: NextPage<any> = ({ data }) => {
+const Auto: NextPage<any> = ({ products }) => {
 
 
     return (
         <Wrapper title='t-shirt'>
             <Main>
-                {data && data.map((item) => {
-                    return (
-                        <p key={item.id}>{item.title}</p>
-                    )
-                })}
+                <ProductsWrapper>
+                    <GoodsList products={products} />
+                </ProductsWrapper>
+
             </Main>
         </Wrapper>
     );

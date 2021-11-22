@@ -18,7 +18,7 @@ const AdaptiveMenu: FC = () => {
                 <MenuItem>
                     <ListItemIcon sx={{ color: 'inherit' }}>
                         <AccountCircleIcon />
-                        <Typography sx={{ ml: '1rem', fontFamily: 'Roboto sans-serif' }}>
+                        <Typography sx={{ ml: '1rem', fontFamily: 'Roboto sans-serif' }} variant='body1'>
                             Profile
                         </Typography>
                     </ListItemIcon>
@@ -28,7 +28,7 @@ const AdaptiveMenu: FC = () => {
                 <MenuItem>
                     <ListItemIcon sx={{ color: 'inherit' }}>
                         <ShoppingCartIcon />
-                        <Typography sx={{ ml: '1rem', fontFamily: 'Roboto sans-serif' }}>
+                        <Typography sx={{ ml: '1rem', fontFamily: 'Roboto sans-serif' }} variant='body1'>
                             Shopping Cart
                         </Typography>
                     </ListItemIcon>
@@ -37,7 +37,7 @@ const AdaptiveMenu: FC = () => {
             <MenuItem>
                 <ListItemIcon sx={{ color: 'inherit' }}>
                     <LogoutIcon />
-                    <Typography sx={{ ml: '1rem', fontFamily: 'Roboto sans-serif' }}>
+                    <Typography sx={{ ml: '1rem', fontFamily: 'Roboto sans-serif' }} variant='body1'>
                         Logout
                     </Typography>
                 </ListItemIcon>

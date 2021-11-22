@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import React, { FC } from 'react';
 import { ITitle } from '../../interface/interface';
-import styles from '../../styles/Home.module.css'
+import styles from '../../styles/Home.module.css';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
