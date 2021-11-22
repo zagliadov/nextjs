@@ -2,7 +2,7 @@ import { Backdrop, Box, CardContent, CardMedia, Fade, FormControl, IconButton, I
 import { FC, useState, useEffect } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 
-const modalContent: any = {
+const modalContent = {
     position: 'absolute' as 'absolute',
     top: '0%',
     left: '0%',
@@ -11,14 +11,15 @@ const modalContent: any = {
     bgcolor: 'background.paper',
     boxShadow: 24,
     overflow: 'scroll',
-};
+} as const;
 
-const closeButton: any = {
+const closeButton = {
     position: 'absolute' as 'absolute',
     top: '5%',
     left: '85%',
-}
-const card: any = {
+} as const;
+
+const card = {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -26,7 +27,7 @@ const card: any = {
     width: 'auto',
     border: '1px solid red',
     alignItems: 'center',
-};
+} as const;
 
 const cardContentStyle = {
     display: 'flex',
@@ -34,17 +35,27 @@ const cardContentStyle = {
     padding: '20px',
     minWidth: '60%',
     boxSizing: 'border-box',
-} as const
+} as const;
 
 const formControlStyle = {
     paddingTop: '20px',
+} as const;
+
+type IGoodsModalProps = {
+    open: boolean,
+    handleClose: any,
+    title: string,
+    body: string,
+    price: string,
+    id: number,
+    url: string,
 }
 
-
-const GoodsModal: FC<any> = ({ open, handleClose, title, body, price, id, url }) => {
+const GoodsModal: FC<IGoodsModalProps> = ({ open, handleClose, title, body, price, id, url }) => {
 
     const [size, setSize] = useState<string>('');
     const [delivery, setDelivery] = useState<string>('');
+
     const handleSetSize = (e) => {
         setSize(e.target.value)
     }
@@ -143,3 +154,4 @@ const GoodsModal: FC<any> = ({ open, handleClose, title, body, price, id, url })
 };
 
 export default GoodsModal;
+
