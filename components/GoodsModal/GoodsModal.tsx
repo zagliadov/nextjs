@@ -1,6 +1,7 @@
 import { Backdrop, Box, CardContent, CardMedia, Fade, FormControl, IconButton, InputLabel, Modal, NativeSelect, Typography } from '@mui/material';
 import { FC, useState, useEffect } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
+import GoodsModalForm from '../GoodsModalForm/GoodsModalForm';
 
 const modalContent = {
     position: 'absolute' as 'absolute',
@@ -37,9 +38,6 @@ const cardContentStyle = {
     boxSizing: 'border-box',
 } as const;
 
-const formControlStyle = {
-    paddingTop: '20px',
-} as const;
 
 type IGoodsModalProps = {
     open: boolean,
@@ -56,13 +54,20 @@ const GoodsModal: FC<IGoodsModalProps> = ({ open, handleClose, title, body, pric
     const [size, setSize] = useState<string>('');
     const [delivery, setDelivery] = useState<string>('');
 
-    const handleSetSize = (e) => {
-        setSize(e.target.value)
-    }
+    const formOptionSize = [
+        { 'women s': 'Женская S' },
+        { 'women m': 'Женская M' },
+        { 'unisex s': 'Унисекс S' },
+        { 'unisex m': 'Унисекс M' },
+        { 'unisex l': 'Унисекс L' },
+        { 'unisex xl': 'Унисекс XL' },
+        { 'unisex xll': 'Унисекс XLL' },
+    ];
+    const formOptionDelivery = [
+        {'ukraine': 'По Украине'},
+        {'world': 'По миру + 190 грн'}
+    ];
 
-    const handleSetDelivery = (e) => {
-        setDelivery(e.target.value)
-    }
 
     useEffect(() => {
         console.log(size, delivery)
@@ -105,45 +110,18 @@ const GoodsModal: FC<IGoodsModalProps> = ({ open, handleClose, title, body, pric
                             </Typography>
 
 
-                            <FormControl sx={formControlStyle}
-                                onChange={(e) => handleSetSize(e)}>
-                                <InputLabel variant="standard" htmlFor="uncontrolled-native">
-                                    Размер
-                                </InputLabel>
-                                <NativeSelect
-                                    defaultValue={'women s'}
-                                    inputProps={{
-                                        name: 'size',
-                                        id: 'uncontrolled-native',
-                                    }}
-                                >
-                                    <option value={'women s'}>Женская S</option>
-                                    <option value={'women m'}>Женская M</option>
-                                    <option value={'unisex s'}>Унисекс S</option>
-                                    <option value={'unisex m'}>Унисекс M</option>
-                                    <option value={'unisex l'}>Унисекс L</option>
-                                    <option value={'unisex xl'}>Унисекс XL</option>
-                                    <option value={'unisex xll'}>Унисекс XLL</option>
-                                </NativeSelect>
-                            </FormControl>
 
-                            <FormControl sx={formControlStyle}
-                                onChange={(e) => handleSetDelivery(e)}>
-                                <InputLabel variant="standard" htmlFor="uncontrolled-native">
-                                    Доставка
-                                </InputLabel>
-                                <NativeSelect
-                                    defaultValue={'По Украине'}
-                                    inputProps={{
-                                        name: 'delivery',
-                                        id: 'uncontrolled-native',
-                                    }}
-                                >
-                                    <option value={'ukraine'}>По Украине</option>
-                                    <option value={'world'}>По миру + 190 грн</option>
+                            <GoodsModalForm setItem={setSize}
+                                label={`Размер`}
+                                name={`size`}
+                                formOption={formOptionSize}
+                                defaultValue={`women s`} />
+                            <GoodsModalForm setItem={setDelivery}
+                                label={`Достака`}
+                                name={`delivery`}
+                                formOption={formOptionDelivery}
+                                defaultValue={`Украина`} />
 
-                                </NativeSelect>
-                            </FormControl>
                         </CardContent>
 
                     </Box>
