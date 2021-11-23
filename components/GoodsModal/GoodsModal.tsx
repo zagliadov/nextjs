@@ -1,5 +1,5 @@
 import { Backdrop, Box, CardContent, CardMedia, Fade, IconButton, Modal, Typography } from '@mui/material';
-import { FC, useState, useEffect } from 'react';
+import { FC, useState } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 import GoodsModalForm from '../GoodsModalForm/GoodsModalForm';
 import GoodsButtonAddItemToCart from '../GoodsButtonAddItemToCart/GoodsButtonAddItemToCart';
@@ -54,14 +54,6 @@ const GoodsModal: FC<IGoodsModalProps> = ({ open, handleClose, title, body, pric
     const [sizeEmpty, setSizeEmpty] = useState<boolean>(false);
     const [deliveryEmpty, setDeliveryEmpty] = useState<boolean>(false);
 
-
-    useEffect(() => {
-        console.log(size, 'size');
-        console.log(delivery, 'delivery')
-        console.log(sizeEmpty, 'sizeEmpty');
-        console.log(deliveryEmpty, 'deliveryEmpty');
-    }, [sizeEmpty, deliveryEmpty, size, delivery])
-
     return (
         <Modal
             aria-labelledby="transition-modal-title"
@@ -115,6 +107,7 @@ const GoodsModal: FC<IGoodsModalProps> = ({ open, handleClose, title, body, pric
                             <GoodsButtonAddItemToCart
                                 setSizeEmpty={setSizeEmpty}
                                 setDeliveryEmpty={setDeliveryEmpty}
+                                handleClose={handleClose}
                                 title={title}
                                 body={body}
                                 size={size}

@@ -7,7 +7,6 @@ import ProductsList from '../components/ProductsList/ProductsList';
 import ProductsWrapper from '../components/ProductsWrapper/ProductsWrapper';
 import FrontPage from '../components/ FrontPage/FrontPage';
 
-
 export const getStaticProps: GetStaticProps = async () => {
   try {
     dotenv.config();

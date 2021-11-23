@@ -3,7 +3,6 @@ import { FC } from 'react';
 
 
 
-
 type IAddItemToCartProps = {
     title: string, 
     body: string, 
@@ -14,10 +13,11 @@ type IAddItemToCartProps = {
     delivery: string,
     setSizeEmpty: (boolean) => void,
     setDeliveryEmpty: (boolean) => void,
+    handleClose: (boolean) => void,
 }
 
 const GoodsButtonAddItemToCart: FC<IAddItemToCartProps> = (
-    { title, body, price, id, url, size, delivery, setSizeEmpty, setDeliveryEmpty  }) => {
+    { title, body, price, id, url, size, delivery, setSizeEmpty, setDeliveryEmpty, handleClose  }) => {
 
     const addItemToCart = () => {
         if (delivery !== null ) setDeliveryEmpty(true);
@@ -25,6 +25,7 @@ const GoodsButtonAddItemToCart: FC<IAddItemToCartProps> = (
         if(delivery === null) return
         if(size === null) return
         localStorage.setItem(`'${id}'`, JSON.stringify({ title, body, price, id, url, size, delivery }))
+        handleClose(true);
     }
 
 
