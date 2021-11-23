@@ -1,4 +1,4 @@
-import { Button, Card, CardActions, CardContent, CardMedia, Grid, Typography } from '@mui/material';
+import { Card, Grid } from '@mui/material';
 import { FC } from 'react';
 import { IPropsGoodsList } from '../../interface/interface';
 import GoodsListDetail from '../GoodsListDetail/GoodsListDetail';
@@ -28,7 +28,9 @@ const GoodsList: FC<IPropsGoodsList> = ({ products }) => {
                                 title={product.title}
                                 body={product.body}
                                 id={product.id}
-                                price={product.price} />
+                                price={product.price} 
+                                sizeOption={product.sizeOption}
+                                deliveryOption={product.deliveryOption} />
 
                         </Card>
 

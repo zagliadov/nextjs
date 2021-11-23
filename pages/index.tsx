@@ -33,10 +33,10 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const Index: NextPage<IProps> = ({ products }) => {
 
+
   return (
     <Wrapper title={'Home page'}>
       <Main>
-
         <FrontPage />
 
         <ProductsWrapper>

@@ -28,18 +28,36 @@ export type IGoods = {
     body: string;
     price?: string;
     url: string;
+    sizeOption: sizeOption[];
+    deliveryOption: deliveryOption[]
 }
 export interface IPropsGoodsList {
     products: IGoods[];
 }
+export type IGoodsModalProps = {
+    open: boolean,
+    handleClose: (boolean) => void,
+    title: string,
+    body: string,
+    price: string,
+    id: number,
+    url: string,
+    sizeOption: sizeOption[],
+    deliveryOption: deliveryOption[],
+}
 
 
-export type IAccessories = {
+
+export type sizeOption = {[key: string]: string}
+export type deliveryOption = {[key: string]: string}
+export interface IAccessories {
     id: number;
     title: string;
     body: string;
     price: string;
     url: string;
+    sizeOption: sizeOption[];
+    deliveryOption: deliveryOption[];
 }
 
 export type IHoodies = {
@@ -48,6 +66,8 @@ export type IHoodies = {
     body: string;
     price: string;
     url: string;
+    sizeOption: sizeOption[];
+    deliveryOption: deliveryOption[];
 }
 
 export type IMasks = {
@@ -56,6 +76,8 @@ export type IMasks = {
     body: string;
     price: string;
     url: string;
+    sizeOption: sizeOption[];
+    deliveryOption: deliveryOption[];
 }
 
 export type ISocks = {
@@ -64,6 +86,8 @@ export type ISocks = {
     body: string;
     price: string;
     url: string;
+    sizeOption: sizeOption[];
+    deliveryOption: deliveryOption[];
 }
 
 export type ITshirt = {
@@ -72,4 +96,6 @@ export type ITshirt = {
     body: string;
     price: string;
     url: string;
+    sizeOption: sizeOption[];
+    deliveryOption: deliveryOption[];
 }

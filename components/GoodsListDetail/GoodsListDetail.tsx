@@ -3,7 +3,7 @@ import { FC, useState } from 'react';
 import { IGoods } from '../../interface/interface';
 import GoodsModal from '../GoodsModal/GoodsModal';
 
-const GoodsListDetail: FC<IGoods> = ({ url, title, body, id, price }) => {
+const GoodsListDetail: FC<IGoods> = ({ url, title, body, id, price, sizeOption, deliveryOption }) => {
 
     const [open, setOpen] = useState<boolean>(false);
 
@@ -25,7 +25,9 @@ const GoodsListDetail: FC<IGoods> = ({ url, title, body, id, price }) => {
                     id={id}
                     title={title}
                     body={body}
-                    price={price} />
+                    price={price} 
+                    sizeOption={sizeOption}
+                    deliveryOption={deliveryOption} />
                 :
                 <>
                     <CardMedia

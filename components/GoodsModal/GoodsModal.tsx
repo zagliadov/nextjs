@@ -1,7 +1,9 @@
-import { Backdrop, Box, CardContent, CardMedia, Fade, FormControl, IconButton, InputLabel, Modal, NativeSelect, Typography } from '@mui/material';
+import { Backdrop, Box, CardContent, CardMedia, Fade, IconButton, Modal, Typography } from '@mui/material';
 import { FC, useState, useEffect } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 import GoodsModalForm from '../GoodsModalForm/GoodsModalForm';
+import GoodsButtonAddItemToCart from '../GoodsButtonAddItemToCart/GoodsButtonAddItemToCart';
+import { IGoodsModalProps } from '../../interface/interface';
 
 const modalContent = {
     position: 'absolute' as 'absolute',
@@ -39,40 +41,26 @@ const cardContentStyle = {
 } as const;
 
 
-type IGoodsModalProps = {
-    open: boolean,
-    handleClose: any,
-    title: string,
-    body: string,
-    price: string,
-    id: number,
-    url: string,
-}
 
-const GoodsModal: FC<IGoodsModalProps> = ({ open, handleClose, title, body, price, id, url }) => {
 
-    const [size, setSize] = useState<string>('');
-    const [delivery, setDelivery] = useState<string>('');
+const GoodsModal: FC<IGoodsModalProps> = ({ open, handleClose, title, body, price, id, url, sizeOption, deliveryOption }) => {
 
-    const formOptionSize = [
-        { 'women s': 'Женская S' },
-        { 'women m': 'Женская M' },
-        { 'unisex s': 'Унисекс S' },
-        { 'unisex m': 'Унисекс M' },
-        { 'unisex l': 'Унисекс L' },
-        { 'unisex xl': 'Унисекс XL' },
-        { 'unisex xll': 'Унисекс XLL' },
-    ];
-    const formOptionDelivery = [
-        {'ukraine': 'По Украине'},
-        {'world': 'По миру + 190 грн'}
-    ];
+    const [size, setSize] = useState<string>(null);
+    const [delivery, setDelivery] = useState<string>(null);
+    // In the GoodsButtonAddItemToCart component checks for the size and 
+    // delivery fields filled in, and if they are not filled, the setEmpty 
+    // gets true, empty is sent to the GoodsModalForm to display a message 
+    // depending on the value
+    const [sizeEmpty, setSizeEmpty] = useState<boolean>(false);
+    const [deliveryEmpty, setDeliveryEmpty] = useState<boolean>(false);
 
 
     useEffect(() => {
-        console.log(size, delivery)
-    }, [size, delivery])
-
+        console.log(size, 'size');
+        console.log(delivery, 'delivery')
+        console.log(sizeEmpty, 'sizeEmpty');
+        console.log(deliveryEmpty, 'deliveryEmpty');
+    }, [sizeEmpty, deliveryEmpty, size, delivery])
 
     return (
         <Modal
@@ -113,15 +101,27 @@ const GoodsModal: FC<IGoodsModalProps> = ({ open, handleClose, title, body, pric
 
                             <GoodsModalForm setItem={setSize}
                                 label={`Размер`}
+                                empty={sizeEmpty}
                                 name={`size`}
-                                formOption={formOptionSize}
-                                defaultValue={`women s`} />
+                                formOption={sizeOption}
+                                defaultValue={``} />
                             <GoodsModalForm setItem={setDelivery}
                                 label={`Достака`}
+                                empty={deliveryEmpty}
                                 name={`delivery`}
-                                formOption={formOptionDelivery}
-                                defaultValue={`Украина`} />
+                                formOption={deliveryOption}
+                                defaultValue={``} />
 
+                            <GoodsButtonAddItemToCart
+                                setSizeEmpty={setSizeEmpty}
+                                setDeliveryEmpty={setDeliveryEmpty}
+                                title={title}
+                                body={body}
+                                size={size}
+                                delivery={delivery}
+                                price={price}
+                                id={id}
+                                url={url} />
                         </CardContent>
 
                     </Box>
