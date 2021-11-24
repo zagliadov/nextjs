@@ -43,7 +43,18 @@ const cardContentStyle = {
 
 
 
-const GoodsModal: FC<IGoodsModalProps> = ({ open, handleClose, title, body, price, id, url, sizeOption, deliveryOption }) => {
+const GoodsModal: FC<IGoodsModalProps> = ({ 
+    open, 
+    handleClose, 
+    title, 
+    body, 
+    price, 
+    id, 
+    url, 
+    sizeOption, 
+    deliveryOption,
+    setStore,
+ }) => {
 
     const [size, setSize] = useState<string>(null);
     const [delivery, setDelivery] = useState<string>(null);
@@ -105,6 +116,7 @@ const GoodsModal: FC<IGoodsModalProps> = ({ open, handleClose, title, body, pric
                                 defaultValue={``} />
 
                             <GoodsButtonAddItemToCart
+                                setStore={setStore}
                                 setSizeEmpty={setSizeEmpty}
                                 setDeliveryEmpty={setDeliveryEmpty}
                                 handleClose={handleClose}

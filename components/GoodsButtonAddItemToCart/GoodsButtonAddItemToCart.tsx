@@ -1,30 +1,45 @@
 import { Button } from '@mui/material';
-import { FC } from 'react';
+import { FC, useState } from 'react';
+import { IAddItemToCartProps } from '../../interface/interface';
 
 
 
-type IAddItemToCartProps = {
-    title: string, 
-    body: string, 
-    price: string, 
-    id: number, 
-    url: string, 
-    size: string, 
-    delivery: string,
-    setSizeEmpty: (boolean) => void,
-    setDeliveryEmpty: (boolean) => void,
-    handleClose: (boolean) => void,
-}
+const GoodsButtonAddItemToCart: FC<IAddItemToCartProps> = ({
+    title,
+    body,
+    price,
+    id,
+    url,
+    size,
+    delivery,
+    setSizeEmpty,
+    setDeliveryEmpty,
+    handleClose,
+    setStore,
+}) => {
 
-const GoodsButtonAddItemToCart: FC<IAddItemToCartProps> = (
-    { title, body, price, id, url, size, delivery, setSizeEmpty, setDeliveryEmpty, handleClose  }) => {
+    let arr = JSON.parse(localStorage.getItem('products')) || [];
+ 
 
     const addItemToCart = () => {
-        if (delivery !== null ) setDeliveryEmpty(true);
-        if (size !== null ) setSizeEmpty(true);
-        if(delivery === null) return
-        if(size === null) return
-        localStorage.setItem(`'${id}'`, JSON.stringify({ title, body, price, id, url, size, delivery }))
+        if (delivery !== null) setDeliveryEmpty(true);
+        if (size !== null) setSizeEmpty(true);
+        if (delivery === null) return
+        if (size === null) return
+
+        
+        arr.push({title, body, price, id, url, size, delivery} )
+        localStorage.setItem(`products`, JSON.stringify(arr));
+
+        // if (localStorage.getItem('ally-supports-cache')) {
+        //     setStore(localStorage.length - 1);
+        // }
+        // if (!localStorage.getItem('ally-supports-cache')) {
+        //     setStore(localStorage.length);
+        // }
+        if(localStorage.getItem('products')) {
+            setStore(JSON.parse(localStorage.getItem('products')).length);
+        }
         handleClose(true);
     }
 

@@ -3,7 +3,16 @@ import { FC, useState } from 'react';
 import { IGoods } from '../../interface/interface';
 import GoodsModal from '../GoodsModal/GoodsModal';
 
-const GoodsListDetail: FC<IGoods> = ({ url, title, body, id, price, sizeOption, deliveryOption }) => {
+const GoodsListDetail: FC<IGoods> = ({ 
+    url, 
+    title, 
+    body, 
+    id, 
+    price, 
+    sizeOption, 
+    deliveryOption, 
+    setStore,
+}) => {
 
     const [open, setOpen] = useState<boolean>(false);
 
@@ -19,6 +28,7 @@ const GoodsListDetail: FC<IGoods> = ({ url, title, body, id, price, sizeOption, 
         <>
             {open ?
                 <GoodsModal
+                    setStore={setStore}
                     open={open}
                     handleClose={handleClose}
                     url={url}

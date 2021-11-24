@@ -34,7 +34,7 @@ const shopingIcon = {
 const FixedShoppingBasketIcon: FC = () => {
 
 
-
+    
 
     return (
         <Link href='/shopping-cart' passHref>

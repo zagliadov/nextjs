@@ -19,9 +19,6 @@ export interface ITitle {
     title: string;
 }
 
-
-
-
 export type IGoods = {
     id?: number;
     title: string;
@@ -30,6 +27,7 @@ export type IGoods = {
     url: string;
     sizeOption: sizeOption[];
     deliveryOption: deliveryOption[]
+    setStore: (number) => void;
 }
 export interface IPropsGoodsList {
     products: IGoods[];
@@ -37,6 +35,7 @@ export interface IPropsGoodsList {
 export type IGoodsModalProps = {
     open: boolean,
     handleClose: (boolean) => void,
+    setStore: (number) => void,
     title: string,
     body: string,
     price: string,
@@ -45,7 +44,19 @@ export type IGoodsModalProps = {
     sizeOption: sizeOption[],
     deliveryOption: deliveryOption[],
 }
-
+export type IAddItemToCartProps = {
+    title: string, 
+    body: string, 
+    price: string, 
+    id: number, 
+    url: string, 
+    size: string, 
+    delivery: string,
+    setSizeEmpty: (boolean) => void,
+    setDeliveryEmpty: (boolean) => void,
+    handleClose: (boolean) => void,
+    setStore: (number) => void,
+}
 
 
 export type sizeOption = {[key: string]: string}
