@@ -1,7 +1,9 @@
 import { Grid } from '@mui/material';
 import { FC } from 'react';
 
+
 const ProductsWrapper: FC = ({ children }) => {
+
     return (
         <Grid container spacing={2}
             sx={{

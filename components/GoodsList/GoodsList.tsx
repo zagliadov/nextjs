@@ -1,10 +1,23 @@
-import { Button, Card, CardActions, CardContent, CardMedia, Grid, Typography } from '@mui/material';
-import { FC } from 'react';
+import { Card, Grid, Typography } from '@mui/material';
+import { FC, useState, useEffect } from 'react';
 import { IPropsGoodsList } from '../../interface/interface';
 import GoodsListDetail from '../GoodsListDetail/GoodsListDetail';
-
+import FixedShoppingBasketIcon from '../FixedShoppingBasketIcon/FixedShoppingBasketIcon';
 
 const GoodsList: FC<IPropsGoodsList> = ({ products }) => {
+
+    const [store, setStore] = useState<number>(0);
+
+    // setStore is used to re-render the Typography element, 
+    // which displays the number of product items in localStorage
+
+    useEffect(() => {
+        if(localStorage.getItem('products')) {
+            setStore(JSON.parse(localStorage.getItem('products')).length);
+        }
+    }, [store])
+
+
     return (
         <>
             {products && products.map((product) => {
@@ -24,13 +37,29 @@ const GoodsList: FC<IPropsGoodsList> = ({ products }) => {
                             position: 'relative',
                         }}>
                             <GoodsListDetail
+                                setStore={setStore}
                                 url={product.url}
                                 title={product.title}
                                 body={product.body}
                                 id={product.id}
-                                price={product.price} />
+                                price={product.price}
+                                sizeOption={product.sizeOption}
+                                deliveryOption={product.deliveryOption} />
 
                         </Card>
+
+                        <FixedShoppingBasketIcon />
+                        <Typography
+                            variant="body1"
+                            component="p"
+                            sx={{
+                                position: 'fixed',
+                                top: '39%',
+                                left: '96%',
+                            }}
+                        >
+                            {store}
+                        </Typography>
 
                     </Grid>
                 )

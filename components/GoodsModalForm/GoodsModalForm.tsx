@@ -3,7 +3,7 @@ import { FC } from 'react';
 
 
 const formControlStyle = {
-    paddingTop: '20px',
+    paddingBottom: '20px',
 } as const;
 
 
@@ -13,7 +13,8 @@ const GoodsModalForm: FC<any> = (
         name,
         defaultValue,
         label,
-        formOption
+        formOption,
+        empty,
     }) => {
 
     const handleSet = (e, setItem) => {
@@ -34,17 +35,19 @@ const GoodsModalForm: FC<any> = (
                     id: 'uncontrolled-native',
                 }}
             >
+                <option aria-label="None" value="" />
                 {formOption && formOption.map((item: string) => {
                     return (
                         <option value={`${Object.keys(item)[0]}`}
                             key={Object.keys(item)[0]}>
-                                
+
                             {`${Object.values(item)[0]}`}
                         </option>
                     )
                 })}
 
             </NativeSelect>
+            {!empty && <p>Не заполненое поле {label}</p>}
         </FormControl>
     );
 };

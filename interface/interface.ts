@@ -19,27 +19,56 @@ export interface ITitle {
     title: string;
 }
 
-
-
-
 export type IGoods = {
     id?: number;
     title: string;
     body: string;
     price?: string;
     url: string;
+    sizeOption: sizeOption[];
+    deliveryOption: deliveryOption[]
+    setStore: (number) => void;
 }
 export interface IPropsGoodsList {
     products: IGoods[];
 }
+export type IGoodsModalProps = {
+    open: boolean,
+    handleClose: (boolean) => void,
+    setStore: (number) => void,
+    title: string,
+    body: string,
+    price: string,
+    id: number,
+    url: string,
+    sizeOption: sizeOption[],
+    deliveryOption: deliveryOption[],
+}
+export type IAddItemToCartProps = {
+    title: string, 
+    body: string, 
+    price: string, 
+    id: number, 
+    url: string, 
+    size: string, 
+    delivery: string,
+    setSizeEmpty: (boolean) => void,
+    setDeliveryEmpty: (boolean) => void,
+    handleClose: (boolean) => void,
+    setStore: (number) => void,
+}
 
 
-export type IAccessories = {
+export type sizeOption = {[key: string]: string}
+export type deliveryOption = {[key: string]: string}
+export interface IAccessories {
     id: number;
     title: string;
     body: string;
     price: string;
     url: string;
+    sizeOption: sizeOption[];
+    deliveryOption: deliveryOption[];
 }
 
 export type IHoodies = {
@@ -48,6 +77,8 @@ export type IHoodies = {
     body: string;
     price: string;
     url: string;
+    sizeOption: sizeOption[];
+    deliveryOption: deliveryOption[];
 }
 
 export type IMasks = {
@@ -56,6 +87,8 @@ export type IMasks = {
     body: string;
     price: string;
     url: string;
+    sizeOption: sizeOption[];
+    deliveryOption: deliveryOption[];
 }
 
 export type ISocks = {
@@ -64,6 +97,8 @@ export type ISocks = {
     body: string;
     price: string;
     url: string;
+    sizeOption: sizeOption[];
+    deliveryOption: deliveryOption[];
 }
 
 export type ITshirt = {
@@ -72,4 +107,6 @@ export type ITshirt = {
     body: string;
     price: string;
     url: string;
+    sizeOption: sizeOption[];
+    deliveryOption: deliveryOption[];
 }

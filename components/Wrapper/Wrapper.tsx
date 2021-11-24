@@ -6,6 +6,7 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
 const Wrapper: FC<ITitle> = ({ children, title = 'Next App' }) => {
+
     return (
         <div className={styles.container}>
             <Head>
